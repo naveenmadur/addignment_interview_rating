@@ -1,11 +1,8 @@
 part of 'interviews_bloc.dart';
 
-abstract class InterviewsState extends Equatable {
+abstract class InterviewsState {
   const InterviewsState();
-  
 
-  @override
-  List<Object> get props => [];
 }
 
 class EmptyState extends InterviewsState {}
@@ -16,8 +13,6 @@ class ErrorState extends InterviewsState {
   const ErrorState({required this.message});
   final String message;
 
-  @override
-  List<Object> get props => [message];
 }
 
 class LoadedState extends InterviewsState {
@@ -29,8 +24,4 @@ class LoadedState extends InterviewsState {
   final List<InterviewListEntity> addedList;
   final List<InterviewListEntity> interviewList;
   final bool buttonActiveStatus;
-
-
-  @override
-  List<Object> get props => [interviewList, addedList, buttonActiveStatus];
 }
