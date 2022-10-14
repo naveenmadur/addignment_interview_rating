@@ -9,18 +9,14 @@ class SearchBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    
     return Container(
       margin: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
       decoration: BoxDecoration(
           borderRadius: BorderRadius.circular((10)),
           color: ColorConstants.kGrey,
           boxShadow: const [
-            BoxShadow(
-              color: ColorConstants.kShadowColor,
-              blurRadius: 10,
-              spreadRadius: 3,
-              offset: Offset(0, 5),
-            )
+            ColorConstants.kSearchBarShadow
           ]),
       child: ListTile(
         leading: SizedBox(
