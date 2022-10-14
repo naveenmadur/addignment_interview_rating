@@ -38,7 +38,7 @@ class BottomNextButton extends StatelessWidget {
   GestureDetector nextButton(BuildContext context, LoadedState state) {
     return GestureDetector(
       onTap: () {
-        if (state.buttonActiveStatus) {
+        if (!state.buttonActiveStatus) {
           BlocProvider.of<InterviewsBloc>(context)
               .add(NavigateToRatingsScreenEvent());
           Navigator.of(context).push(

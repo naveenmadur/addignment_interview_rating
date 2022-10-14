@@ -6,8 +6,7 @@ import 'widgets/bottom_next_button.dart';
 import 'widgets/interviewers_page_body.dart';
 
 class InterviewersPage extends StatelessWidget {
-  const InterviewersPage({Key? key, required this.title}) : super(key: key);
-  final String title;
+  const InterviewersPage({Key? key,}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -15,8 +14,8 @@ class InterviewersPage extends StatelessWidget {
       backgroundColor: ColorConstants.kGrey,
       appBar: AppBar(
         automaticallyImplyLeading: false,
-        title: Text(
-          title,
+        title: const Text(
+          'Interviewers',
           style: TextStyles.kAppBarTextStyle,
         ),
         elevation: 0,

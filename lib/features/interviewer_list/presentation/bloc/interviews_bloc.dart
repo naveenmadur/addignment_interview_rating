@@ -137,5 +137,14 @@ class InterviewsBloc extends Bloc<InterviewsEvent, InterviewsState> {
           buttonActiveStatus: _getButtonActiveStatus(),
           ratingTileList: ratingTileList));
     });
+
+    on<GoBackEvent>((event, emit){
+      add(ResetEvent());
+      emit(LoadedState(
+          interviewList: localList,
+          addedList: addedList,
+          buttonActiveStatus: _getButtonActiveStatus(),
+          ratingTileList: ratingTileList));
+    });
   }
 }

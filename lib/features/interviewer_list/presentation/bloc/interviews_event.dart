@@ -29,3 +29,5 @@ class ToogleQualities extends InterviewsEvent {
 }
 
 class ResetEvent extends InterviewsEvent{}
+
+class GoBackEvent extends InterviewsEvent{}

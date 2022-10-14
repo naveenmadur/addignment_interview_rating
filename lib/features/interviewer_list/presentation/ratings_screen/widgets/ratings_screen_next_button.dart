@@ -1,28 +1,38 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:interview_app_clean_code/core/constants/icons.dart';
+import 'package:interview_app_clean_code/core/constants/margins.dart';
+import 'package:interview_app_clean_code/features/interviewer_list/presentation/interviewers_page/interviewers_page.dart';
 import 'package:interview_app_clean_code/features/interviewer_list/presentation/qualities_screen/qualities_screen.dart';
+import '../../../../../core/constants/text_constants.dart';
 import '../../../../../core/constants/text_styles.dart';
 import '../../bloc/interviews_bloc.dart';
 import '../../../../../core/constants/color_constants.dart';
 
 class RatingsScreenNextButton extends StatelessWidget {
-  const RatingsScreenNextButton(
-      {Key? key,})
-      : super(key: key);
- 
+  const RatingsScreenNextButton({
+    Key? key,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    BlocProvider.of<InterviewsBloc>(context).add(FetchInterviewerListEvent());
+    // BlocProvider.of<InterviewsBloc>(context).add(FetchInterviewerListEvent());
     return Container(
-      margin: const EdgeInsets.only(left: 40),
+      margin: Margins.kFloatingActionButtonMargin,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          const Expanded(
-            child: Text(
-              'GO BACK',
-              style: TextStyles.kTrailingTextStyle,
+          GestureDetector(
+            onTap: () {
+              BlocProvider.of<InterviewsBloc>(context).add(GoBackEvent());
+              Navigator.of(context).pushReplacement(MaterialPageRoute(
+                  builder: (context) => const InterviewersPage()));
+            },
+            child: const Expanded(
+              child: Text(
+                'GO BACK',
+                style: TextStyles.kTrailingTextStyle,
+              ),
             ),
           ),
           Container(
@@ -39,15 +49,8 @@ class RatingsScreenNextButton extends StatelessWidget {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: const [
-                  Text(
-                    'NEXT',
-                    style: TextStyles.kEnableButtonTextStyle,
-                  ),
-                  Icon(
-                    Icons.chevron_right_outlined,
-                    color: ColorConstants.kEnableTextColor,
-                    size: 30,
-                  )
+                  TextConstants.kFloatingActionButtonNextText,
+                  IconConstants.kChevronRight,
                 ],
               ),
             ),

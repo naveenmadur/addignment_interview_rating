@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:interview_app_clean_code/features/interviewer_list/presentation/comment_screen/comment_screen.dart';
+import 'package:interview_app_clean_code/features/interviewer_list/presentation/thank_you_page/thank_you_page.dart';
 import 'features/interviewer_list/presentation/bloc/interviews_bloc.dart';
 import 'features/interviewer_list/presentation/interviewers_page/interviewers_page.dart';
 import 'injection_container.dart' as di;
@@ -24,9 +25,10 @@ class MyApp extends StatelessWidget {
           primarySwatch: Colors.blue,
         ),
         // home: const CommentScreen(),
-        home: const InterviewersPage(title: 'Interviewers'),
+        home: const InterviewersPage(),
         // home: const RatingsScreen(),
         // home: const SubmitScreen(),
+        // home: const ThankYouPage(),
       ),
     );
   }

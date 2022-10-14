@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:interview_app_clean_code/core/constants/color_constants.dart';
+import 'package:interview_app_clean_code/core/constants/paddings.dart';
+import 'package:interview_app_clean_code/core/constants/text_constants.dart';
 import 'package:interview_app_clean_code/features/interviewer_list/presentation/ratings_screen/widgets/ratings_screen_next_button.dart';
+import '../../../../core/constants/text_styles.dart';
 import '../bloc/interviews_bloc.dart';
 
 class RatingsScreen extends StatelessWidget {
@@ -12,21 +15,17 @@ class RatingsScreen extends StatelessWidget {
     return Scaffold(
       backgroundColor: ColorConstants.kGrey,
       body: Container(
-        padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 40),
+        padding: Paddings.kRatingsScreenPadding,
         child: Column(
-            // mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Container(
                 color: ColorConstants.kGrey,
-                child: const Text(
-                  'How would you rate your interviewer(s)?',
-                  style: TextStyle(fontSize: 48, fontWeight: FontWeight.w500),
-                ),
+                child: TextConstants.kRatingsScrenText,
               ),
               Container(
                 margin: const EdgeInsets.only(top: 10),
-                child: const Text('Select your ratings'),
+                child: TextConstants.kSelectYourRatingText,
               ),
               BlocBuilder<InterviewsBloc, InterviewsState>(
                 builder: (context, state) {

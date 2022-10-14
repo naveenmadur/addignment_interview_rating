@@ -13,4 +13,7 @@ class TextStyles {
       static const TextStyle kEnableButtonTextStyle = TextStyle(fontSize: 17, color:ColorConstants.kEnableTextColor);
       static const TextStyle kRatingTileIconTextStyle = TextStyle(fontSize: 50);
       static const TextStyle kRatingTileActiveTextStyle = TextStyle(fontSize: 20, color: Colors.white);
+      static const TextStyle kQualityScreenTrailingTextStyle = TextStyle(fontSize: 16, decoration: TextDecoration.underline, color: Colors.white);
+      static const TextStyle kQualityScreenSubtitleTextStyle = TextStyle(fontSize: 16, fontWeight: FontWeight.w400, color: Colors.white);
+      static const TextStyle kAddedListLengthTextStyle = TextStyle(color: ColorConstants.kDisableTextColor, fontSize: 16, fontWeight: FontWeight.w600);
 }

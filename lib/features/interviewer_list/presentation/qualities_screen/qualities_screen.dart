@@ -31,13 +31,13 @@ class QualitiesScreen extends StatelessWidget {
 
             Text getSubtitle() {
               if (state.rating.title == 'Awesome') {
-                return TextConstants.kRatingTileEnableAwesomeSubtitle;
+                return TextConstants.kQualityScreenAwesomeSubtitle;
               } else if (state.rating.title == 'Good') {
-                return TextConstants.kRatingTileEnableGoodSubtitle;
+                return TextConstants.kQualityScreenGoodSubtitle;
               } else if (state.rating.title == 'Neutral') {
-                return TextConstants.kRatingTileEnableNeutralSubtitle;
+                return TextConstants.kQualityScreenNeutralSubtitle;
               } else {
-                return TextConstants.kRatingTileEnableBadSubtitle;
+                return TextConstants.kQualityScreenBadSubtitle;
               }
             }
 
@@ -45,7 +45,7 @@ class QualitiesScreen extends StatelessWidget {
               children: [
                 Container(
                   padding: const EdgeInsets.only(
-                      top: 60, bottom: 30, left: 14, right: 14),
+                      top: 60, bottom: 20, left: 14, right: 14),
                   decoration: const BoxDecoration(
                     borderRadius: BorderRadius.only(
                         bottomLeft: Radius.circular(20),
@@ -65,14 +65,20 @@ class QualitiesScreen extends StatelessWidget {
                             borderRadius: BorderRadius.circular(10)),
                         color: ColorConstants.kSelectedContainerColor,
                         child: Padding(
-                          padding: const EdgeInsets.all(8.0),
+                          padding: const EdgeInsets.only(top: 10, left: 10, right: 10, bottom: 15),
                           child: ListTile(
                             leading: state.rating.emoji,
                             title: getTitle(),
                             subtitle: getSubtitle(),
-                            trailing: const Text(
-                              'CHANGE',
-                              style: TextStyles.kTrailingTextStyle,
+                            trailing: GestureDetector(
+                              onTap: (){
+                                BlocProvider.of<InterviewsBloc>(context).add(ResetEvent());
+                                Navigator.of(context).pop();
+                              },
+                              child: const Text(
+                                'CHANGE',
+                                style: TextStyles.kQualityScreenTrailingTextStyle,
+                              ),
                             ),
                           ),
                         ),

@@ -19,6 +19,16 @@ class TextConstants {
   static const kFrowningFace =
       Text('😕', style: TextStyles.kRatingTileIconTextStyle);
 
+  static const kRatingsScrenText =  
+      Text('How would you rate your interviewer(s)?',
+      style: TextStyle(fontSize: 48, fontWeight: FontWeight.w500),);
+
+  static const kSelectYourRatingText =  
+      Text('Select your ratings', 
+      style: TextStyles.kAddedListLengthTextStyle,);
+
+  static const kFloatingActionButtonNextText = Text('NEXT',style: TextStyles.kEnableButtonTextStyle,);
+
   //! Enable Titles
   static const kRatingTileEnableAwesomeTitle = Text('Awesome', style: TextStyles.kRatingTileActiveTextStyle);
   static const kRatingTileEnableNeutralTitle = Text('Neutral', style: TextStyles.kRatingTileActiveTextStyle);
@@ -42,4 +52,11 @@ class TextConstants {
   static const kRatingTileDisableNeutralSubtitle = Text('Nice Person. Really \n Nice!', style: TextStyle(fontSize: 20,),);
   static const kRatingTileDisableGoodSubtitle = Text('Ummmm... Okay \n I guess!', style: TextStyle(fontSize: 20,),);
   static const kRatingTileDisableBadSubtitle = Text('Needs to Improve! \n A LOT!', style: TextStyle(fontSize: 20,),);
+
+  //! Subtitles of Quality Screen
+  static const kQualityScreenAwesomeSubtitle = Text('Best Interview. \n Ever!', style: TextStyles.kQualityScreenSubtitleTextStyle,);
+  static const kQualityScreenNeutralSubtitle = Text('Nice Person. Really \n Nice!', style: TextStyles.kQualityScreenSubtitleTextStyle,);
+  static const kQualityScreenGoodSubtitle = Text('Ummmm... Okay \n I guess!', style: TextStyles.kQualityScreenSubtitleTextStyle,);
+  static const kQualityScreenBadSubtitle = Text('Needs to Improve! \n A LOT!', style: TextStyles.kQualityScreenSubtitleTextStyle,);
+
 }
